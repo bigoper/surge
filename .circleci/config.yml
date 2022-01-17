@@ -1,10 +1,9 @@
-#try to change it from you outputPath "dist/angular-app",
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
-    # working_directory: ~/angular-app  #try to change it from you outputPath "dist/angular-app"
+    working_directory: "~/Documents/projects/interviews/SeaLights - Demos/"
     docker:
       - image: circleci/node:12-browsers
     steps:
@@ -16,11 +15,9 @@ jobs:
           key: surge-app-{{ .Branch }}-{{ checksum "package-lock.json"}}
           paths:
             - "nodes_modules"
-      #- run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
       - run: npm run build
       - deploy:
-          command: |  #try to change it from you outputPath "dist/angular-app",
-            ./node_modules/.bin/surge --project ./04-integration-circleci/
+          command: ./node_modules/.bin/surge --project ./04-integration-circleci/
 workflows:
     build-and-test:
       jobs:
