@@ -18,6 +18,7 @@ jobs:
       # - run: npm run build
       - deploy:
           command: ./node_modules/.bin/surge --project ./04-integration-circleci/
+          # SURGE_LOGIN & SURGE_TOKEN were added to circleCi's project settings
 workflows:
     build-and-test:
       jobs:
