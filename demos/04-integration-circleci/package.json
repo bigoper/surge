@@ -1,0 +1,14 @@
+{
+  "name": "04-integration-circleci",
+  "version": "1.0.0",
+  "description": "surge integration with CircleCI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "author": "Avi (bigoper)",
+  "license": "ISC",
+  "devDependencies": {
+    "surge": "^0.23.1"
+  }
+}
