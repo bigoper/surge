@@ -15,7 +15,7 @@ jobs:
           key: surge-app-{{ .Branch }}-{{ checksum "package-lock.json"}}
           paths:
             - "nodes_modules"
-      - run: npm run build
+      # - run: npm run build
       - deploy:
           command: ./node_modules/.bin/surge --project ./04-integration-circleci/
 workflows:
