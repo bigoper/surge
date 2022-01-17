@@ -1,0 +1,11 @@
+{
+  "name": "00-assets",
+  "version": "1.0.0",
+  "description": "Serving static files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "avi (bigoper)",
+  "license": "ISC"
+}
