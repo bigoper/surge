@@ -1,6 +1,3 @@
-trigger:
-  - main
-
 variables:
   VSTS_TASK_DEBUG: 1
   SYSTEM_DEBUG: true
@@ -9,9 +6,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: custom-task@1
+- task: custom-task-extension@1
   inputs:
-    requiredString: 'Test String'
+    $(requiredString): 'Test String'
     optionalNumber: '42'
     checkboxInput: true
     dropdownInput: 'option1'
