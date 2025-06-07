@@ -6,9 +6,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: custom-task-extension@1
+- task: CustomTask@1
   inputs:
-    $(requiredString): 'Test String'
+    requiredString: 'Test String'
     optionalNumber: '42'
     checkboxInput: true
     dropdownInput: 'option1'
