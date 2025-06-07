@@ -5,11 +5,9 @@ variables:
   VSTS_TASK_DEBUG: 1
   SYSTEM_DEBUG: true
 
-# If you have a self-hosted agent, replace 'ubuntu-latest' with your agent pool name
-# If you don't have a self-hosted agent, keep 'ubuntu-latest' and request free parallelism
 pool:
   name: 'Default'  # This will use your default agent pool
-  # vmImage: 'ubuntu-latest'  # Uncomment this if you get free parallelism
+  vmImage: 'windows-latest'  # Using Windows hosted agent which has PowerShell
 
 steps:
 - task: CustomTask@1
