@@ -1,0 +1,23 @@
+trigger:
+  - main
+
+variables:
+  VSTS_TASK_DEBUG: 1
+  SYSTEM_DEBUG: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: custom-task@1
+  inputs:
+    requiredString: 'Test String'
+    optionalNumber: '42'
+    checkboxInput: true
+    dropdownInput: 'option1'
+    secretInput: '$(MY_SECRET)'  # This will be set in pipeline variables
+  displayName: 'Run Custom Task'
+
+- script: |
+    echo "Task completed. Check the logs above for details."
+  displayName: 'Verify Task Completion' 
